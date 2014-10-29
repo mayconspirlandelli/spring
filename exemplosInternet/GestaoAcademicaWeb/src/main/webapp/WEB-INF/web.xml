@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app>
+    <display-name>GestaoAcademicaWeb</display-name>
+    
+    <servlet>
+        <servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
+<!--        <servlet-name>dispatcher</servlet-name>-->
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/spring-context.xml</param-value>
+        </init-param>
+        <locad-on-startup>1</locad-on-startup>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
+<!--<servlet-name>dispatcher</servlet-name>-->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+</web-app>
