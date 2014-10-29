@@ -30,7 +30,7 @@ public class DocenteDAOImpl implements DocenteDAO {
 
     @Override
     public List<Docente> listarDocentes() {
-        return sessionFactory.getCurrentSession().createQuery("from DOCENTE").list();
+        return sessionFactory.getCurrentSession().createQuery("from DOCENTES").list();
     }
     
 }
