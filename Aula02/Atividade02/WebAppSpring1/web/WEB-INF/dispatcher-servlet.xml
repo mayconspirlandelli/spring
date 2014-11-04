@@ -24,8 +24,8 @@
     <bean id="cliente" class="br.ufg.inf.model.Cliente"/>-->
     
     
-    <bean id="produtoControl" class="br.ufg.inf.controller.ProdutoControl" p:produtoService-ref="produtoService" />
+<!--    <bean id="produtoControl" class="br.ufg.inf.controller.ProdutoControl" p:produtoService-ref="produtoService" />
     <bean id="produtoService" class="br.ufg.inf.service.ProdutoService" p:produto-ref="produto" />
-    <bean id="produto" class="br.ufg.inf.model.Produto"/>
+    <bean id="produto" class="br.ufg.inf.model.Produto"/>-->
 
 </beans>

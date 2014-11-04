@@ -4,7 +4,7 @@ import br.ufg.inf.model.Produto;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- *
+ * NÃO USADA
  * @author Maycon Spirlandelli
  */
 

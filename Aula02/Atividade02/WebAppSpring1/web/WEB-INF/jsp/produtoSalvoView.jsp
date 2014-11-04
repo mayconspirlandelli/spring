@@ -44,7 +44,7 @@
                 </tr>
                 <tr>
                     <td class="alignRight">
-                        <label class="labelsBold">`Preço:</label>
+                        <label class="labelsBold">Preço:</label>
                     </td>
                     <td class="alignLeft">
                         <label class="infoMessage">${produto.preco}</label>

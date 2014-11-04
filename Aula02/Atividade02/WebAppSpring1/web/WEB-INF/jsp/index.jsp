@@ -14,11 +14,11 @@
     <body>
         <br><br>
         <a href="clienteFormView.htm" class="hiperlink">Formulário de cadastro de Cliente da seção</a>
-        <br/>
-        <a href="produtoFormView.htm" class="hiperlink">Formulário de cadastro de Produto</a>
-        <br><br><br><br>
+        <br/>        
         <a href="clienteFormView/dois" class="hiperlink">Formulário de cadastro de Cliente com valor 2</a>
-        <br><br>
+        <br />
         <a href="clienteFormView/outro" class="hiperlink">Formulário de cadastro de Cliente limpo</a>
+        <br /><br /><br /><br />
+        <a href="produtoFormView.htm" class="hiperlink">Formulário de cadastro de Produto</a>
     </body>
 </html>

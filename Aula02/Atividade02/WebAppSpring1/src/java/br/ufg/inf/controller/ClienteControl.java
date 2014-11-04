@@ -31,10 +31,11 @@ public class ClienteControl {
         return "index";
     }
 
+    //Para acessa a pagina: https://localhost:8080/clienteFormView
     @RequestMapping(value = "/clienteFormView", method = RequestMethod.GET)
     public String controleClienteFormView(Model model) {
         model.addAttribute("cliente", cliente);
-        return "clienteFormView";
+        return "clienteFormView"; //Redireciona para a pagina.
     }
 
     @RequestMapping(value = "/clienteSalvoView")

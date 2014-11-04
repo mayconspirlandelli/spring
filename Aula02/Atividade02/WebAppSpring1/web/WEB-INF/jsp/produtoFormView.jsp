@@ -1,4 +1,4 @@
-<%-- 
+    <%-- 
     Document   : produtoFormView
     Created on : 02 nov 2014, 10:14:36
     Author     : Maycon Spirlandelli
@@ -18,8 +18,8 @@
         </style>
     </head>
     <body>
-<!--        A tag "commandName" é para indicar que vincula esta view com o modelo "clientService".-->
-        <form:form method="POST" commandName="produtoService" action="produtoSalvoView.html">
+<!--        A tag "commandName" é para indicar que vincula esta view com o modelo "produto".-->        
+<form:form method="POST" commandName="produto" action="produtoSalvoView.html">
             <div align="center"><br><br>
                 <table class="tabelaRich500">
                     <tr>
@@ -30,26 +30,26 @@
                     <tr><td>&nbsp;</td><td></td></tr>
                     <tr>
                         <td class="alignRight">
-                            <form:label path="produto.nome" cssClass="labelsBold">Nome:</form:label>
+                            <form:label path="nome" cssClass="labelsBold">Nome:</form:label>
                         </td>
                         <td class="alignLeft">
-                            <form:input path="produto.nome" />
+                            <form:input path="nome" />
                         </td>
                     </tr>
                     <tr>
                         <td class="alignRight">
-                            <form:label path="produto.codigo" cssClass="labelsBold">Codigo:</form:label>
+                            <form:label path="codigo" cssClass="labelsBold">Codigo:</form:label>
                         </td>
                         <td class="alignLeft">
-                            <form:input path="produto.codigo" />
+                            <form:input path="codigo" />
                         </td>
                     </tr>                    
                     <tr>
                         <td class="alignRight">
-                            <form:label path="produto.preco" cssClass="labelsBold">Preço:</form:label>
+                            <form:label path="preco" cssClass="labelsBold">Preço:</form:label>
                         </td>
                         <td class="alignLeft">
-                            <form:input path="produto.preco" />
+                            <form:input path="preco" />
                         </td>
                     </tr>                    
                     <tr><td>&nbsp;</td><td></td></tr>
