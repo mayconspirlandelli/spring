@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    
+    <bean id="geradorRelatorioHtml" class="relatorio.GeradorRelatorioHtml">
+    </bean>
+    
+    <bean id="geradorRelatorioPdf" class="relatorio.GeradorRelatorioPdf">
+    </bean>
+    
+    <!--    Injete a dependência pelo factory. -->
+    <bean id="servicoRelatorioPdf" class="relatorio.ServicoRelatorio" factory-method="createInstance">
+        <constructor-arg name="geradorRelatorio" ref="geradorRelatorioPdf"/>         
+    </bean>    
+    <bean id="servicoRelatorioHtml" class="relatorio.ServicoRelatorio" factory-method="createInstance">
+        <constructor-arg name="geradorRelatorio" ref="geradorRelatorioHtml"/>         
+    </bean>    
+         
+</beans>
