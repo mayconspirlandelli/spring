@@ -15,6 +15,7 @@ CREATE TABLE cliente
   senha varchar(20),
   data_nascimento date,
   cpf bigint NOT NULL,
+  administrador TINYINT(1),
   cliente_id int(11) auto_increment NOT NULL
 , PRIMARY KEY(`cliente_id`)
 ) ;

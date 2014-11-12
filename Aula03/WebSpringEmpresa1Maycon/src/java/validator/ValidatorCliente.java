@@ -31,6 +31,8 @@ public class ValidatorCliente implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "usuario", "usuario.obrigatorio");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "senha", "senha.obrigatorio");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "cpf", "cpf.obrigatorio");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "administrador", "usuario.administrador");
+        
         Cliente cli = (Cliente) o;
         if(cli.getUsuario().trim().length() >= 0 && cli.getUsuario().trim().length() < 5) {
             errors.rejectValue("usuario", "usuario.maiorQ4");

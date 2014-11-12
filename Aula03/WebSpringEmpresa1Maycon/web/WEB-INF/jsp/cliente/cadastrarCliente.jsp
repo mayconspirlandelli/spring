@@ -92,6 +92,10 @@
                         </td>
                         <td class="alignLeft"><form:errors path="dataNascimento" cssClass="errorMessage" /></td>
                     </tr --%>
+                    <%-- Exemplo para usar formado de Date. 
+                    <fmt:formatDate value="${yourObject.date}" var="dateString" pattern="dd/MM/yyyy" />
+                        <form:input path="date" value="${dateString} .. />
+                    --%>
                     <tr>
                         <td class="alignRight">
                             <form:label path="cpf" cssClass="labelsBold">CPF:</form:label>
@@ -109,7 +113,7 @@
                                 <form:radiobutton path="administrador" value="false" label="Não" /><br>
                                 <form:radiobutton path="administrador" value="true" label="Sim" />
                         </td>
-                        <td class="alignLeft"><form:errors path="sexo" cssClass="errorMessage" /></td>
+                        <td class="alignLeft"><form:errors path="administrador" cssClass="errorMessage" /></td>
                     </tr>                    
                     <tr><td>&nbsp;</td><td></td><td></td></tr>
                     <tr>

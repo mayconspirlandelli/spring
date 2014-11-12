@@ -4,6 +4,7 @@ Created on : 12 mai 2011, 21:26:00
 Author     : vinicius
 --%>
 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -74,10 +75,12 @@ Author     : vinicius
                     </tr>
                     <tr>
                         <td class="alignRight">
-                            <label class="labelsBold">Data de mascimento:</label>
+                            <label class="labelsBold">Data de nascimento:</label>
                         </td>
                         <td class="alignLeft">
-                            <label class="infoMessage">${cliente.dataNascimento}</label>
+                            <label class="infoMessage">
+                                <fmt:formatDate pattern="MM/dd/yyyy" value="${cliente.dataNascimento}" />
+                            </label>                            
                         </td>
                     </tr>
                     <tr>

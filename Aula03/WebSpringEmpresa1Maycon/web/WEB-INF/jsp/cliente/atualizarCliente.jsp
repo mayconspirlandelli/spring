@@ -101,6 +101,16 @@
                         </td>
                         <td class="alignLeft"><form:errors path="cpf" cssClass="errorMessage" /></td>
                     </tr>
+                     <tr>
+                        <td class="alignRight">
+                            <form:label path="administrador" cssClass="labelsBold">Administrador:</form:label>
+                        </td>
+                        <td class="alignLeft">
+                                <form:radiobutton path="administrador" value="false" label="Não" /><br>
+                                <form:radiobutton path="administrador" value="true" label="Sim" />
+                        </td>
+                        <td class="alignLeft"><form:errors path="administrador" cssClass="errorMessage" /></td>
+                    </tr>
                     <tr><td>&nbsp;</td><td></td><td></td></tr>
                     <tr>
                         <td colspan="3" class="alignCenter">
@@ -112,6 +122,7 @@
         </form:form>
         <br><br>
         <a href="index.html" class="hiperlink">Início.</a><br>
-        <a href="cliente.html" class="hiperlink">Página do cliente.</a>
+        <a href="cliente.html" class="hiperlink">Página do cliente.</a><br>
+        <a href="mostraClientes.html" class="hiperlink">Mostrar clientes.</a>
     </body>
 </html>
