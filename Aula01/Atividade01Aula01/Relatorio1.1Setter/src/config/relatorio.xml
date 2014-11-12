@@ -18,6 +18,14 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             <ref bean="geradorRelatorioHtml" />
         </property>         
     </bean>
+<!--    Outra maneira de fazer tambem.-->
+<!--    <bean id="servicoRelatorio" class="relatorio.ServicoRelatorio">
+        <property name="geradorRelatorioHTML" ref="geradorRelatorioHtml" />        
+    </bean>-->
+    <!--    Outra maneira de fazer tambem.-->
+<!--    <bean id="servicoRelatorio" class="relatorio.ServicoRelatorio">
+        <property name="geradorRelatorioHTML" value="#{geradorRelatorioHtml}" />        
+    </bean>-->
     
 <!--    
     <bean id="exampleBean" class="examples.ExampleBean">

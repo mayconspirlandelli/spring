@@ -6,6 +6,7 @@ package br.ufg.inf.controller;
 
 import br.ufg.inf.model.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @author vinicius
  */
 @Controller
+@Lazy
 public class ClienteControl {
 
     private Cliente cliente;
