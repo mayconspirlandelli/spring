@@ -25,11 +25,8 @@
                 </tr>
                 <tr>
                     <td class="alignCenter">
-                        <a href="cliente.html" class="hiperlink">Página do Aluno.</a>
-                    </td>
-                    <td class="alignCenter">
-                        <a href="produto.html" class="hiperlink">Página de produtos.</a>
-                    </td>
+                        <a href="#" class="hiperlink">Página do Aluno.</a>
+                    </td>                    
                 </tr>
                 <tr>
                     <td class="alignCenter"><br></td>
@@ -37,11 +34,8 @@
                 </tr>
                 <tr>
                     <td class="alignCenter">
-                        <a href="cadastrarAluno.html" class="hiperlink">Cadastrar novo aluno.</a>
-                    </td>
-                    <td class="alignCenter">
-                        <a href="#" class="hiperlink">Mostrar produtos.</a>
-                    </td>
+                        <a href="cadastrarAluno.htm" class="hiperlink">Cadastrar novo aluno.</a>
+                    </td>                    
                 </tr>
                 <tr>
                     <td class="alignCenter"><br></td>
@@ -49,11 +43,8 @@
                 </tr>
                 <tr>
                     <td class="alignCenter">
-                        <a href="#" class="hiperlink">Mostrar alunos.</a>
-                    </td>
-                    <td class="alignCenter">
-                        <a href="#" class="hiperlink">Cadastrar novo produto.</a>
-                    </td>
+                        <a href="obterAlunos.htm" class="hiperlink">Mostrar alunos.</a>
+                    </td>                    
                 </tr>
                 <tr>
                     <td class="alignCenter"><br></td>

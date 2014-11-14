@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <title>Mostra Clientes - DAO</title>
+        <title>Exibir Alunos - DAO</title>
         <style type="text/css">
             <%@include file="/css/stylesheet.css" %>
         </style>
@@ -21,37 +21,28 @@
             <table class="tabelaRich750">
                 <tbody>
                     <tr class="rowDarkGreen">
-                        <td style="text-align: center;" class="labelsBranco">CPF(click para atualizar)</td>
+                        <td style="text-align: center;" class="labelsBranco">Atualizar</td>
                         <td style="text-align: center;" class="labelsBranco">Nome</td>
-                        <td style="text-align: center;" class="labelsBranco">Telefone Fixo</td>
-                        <td style="text-align: center;" class="labelsBranco">Celular</td>
-                        <td style="text-align: center;" class="labelsBranco">Sexo</td>
-                        <td style="text-align: center;" class="labelsBranco">Usuario</td>
-                        <td style="text-align: center;" class="labelsBranco">Data Nasc.</td>                        
-                        <td style="text-align: center;" class="labelsBranco">Administrador</td>                        
-                        <td style="text-align: center;" class="labelsBranco">Excluir cliente</td>                        
+                        <td style="text-align: center;" class="labelsBranco">Matrícula</td>
+                        <td style="text-align: center;" class="labelsBranco">CPF</td>
+                        <td style="text-align: center;" class="labelsBranco">Ano Ingresso</td>
+                        <td style="text-align: center;" class="labelsBranco">Excluir</td>                        
 
                     </tr>
-                    <c:if test="${!empty listaClientes}">
-                        <c:forEach var="cliente" items="${listaClientes}">
+                    <c:if test="${!empty listaAlunos}">
+                        <c:forEach var="aluno" items="${listaAlunos}">
                             <tr>
                                 <td style="vertical-align: top; text-align: center;">
-                                    <a href="atualizarCliente?cpf=${cliente.cpf}"  class="hiperlink">
-                                        <c:out value="${cliente.cpf}" />
+                                     <a href="atualizarAluno?cpf=${aluno.cpf}"  class="hiperlink">
+                                         <c:out value="${aluno.alunoId}" />                                        
                                     </a>                                    
-                                </td>
-                                <td class="alignLeft"><c:out value="${cliente.nome}" /></td>                               
-                                <td class="alignLeft"><c:out value="${cliente.telefoneFixo}" /></td>                               
-                                <td class="alignLeft"><c:out value="${cliente.telefoneCelular}" /></td>
-                                <td class="alignLeft"><c:out value="${cliente.sexo}" /></td>
-                                <td class="alignLeft"><c:out value="${cliente.usuario}" /></td>
-                                <td class="alignLeft"><c:out value="${cliente.dataNascimento}" /></td>                                
-                                <td class="alignLeft">   
-                                    <c:if test="${cliente.administrador}">Sim</c:if>
-                                    <c:if test="${!cliente.administrador}">Não</c:if>
-                                    </td>
-                                    <td class="alignCenter">
-                                        <a href="excluirCliente?cpf=${cliente.cpf}" class="hiperlink">Exluir</a>
+                                </td>                                
+                                <td class="alignLeft"><c:out value="${aluno.nome}" /></td>                               
+                                <td class="alignLeft"><c:out value="${aluno.numeroMatricula}" /></td>
+                                <td class="alignLeft"><c:out value="${aluno.cpf}" /></td>
+                                <td class="alignLeft"><c:out value="${aluno.anoIngresso}" /></td>                                
+                                <td class="alignCenter">
+                                    <a href="excluirAluno?cpf=${aluno.cpf}" class="hiperlink">Exluir</a>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -61,8 +52,7 @@
             <label class="errorTitle">${message}</label>
         </div>
         <br>
-        <a href="index.html" class="hiperlink">Início</a><br>
-        <a href="produto.html" class="hiperlink">Página de produtos</a><br>
-        <a href="cadastrarProduto.html" class="hiperlink">Cadastrar produto</a>
+        <a href="index.html" class="hiperlink">Início</a><br>        
+        <a href="cadastrarAluno.htm" class="hiperlink">Cadastrar novo aluno.</a>
     </body>
 </html>

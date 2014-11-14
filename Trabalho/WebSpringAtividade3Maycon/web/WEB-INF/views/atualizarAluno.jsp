@@ -16,7 +16,7 @@
         </style>
     </head>
     <body>
-        <form:form method="POST" commandName="cliente" action="clienteAtualizado.html">
+        <form:form method="POST" commandName="aluno" action="alunoAtualizado.htm">
             <div align="center"><br><br>
                 <table class="tabelaRich750">
                     <tr>
@@ -36,77 +36,30 @@
                     </tr>
                     <tr>
                         <td class="alignRight">
-                            <form:label path="telefoneFixo" cssClass="labelsBold">Telefone fixo:</form:label>
+                            <form:label path="numeroMatricula" cssClass="labelsBold">Número Matrícula:</form:label>
                         </td>
                         <td class="alignLeft">
-                            <form:input path="telefoneFixo" />
+                            <form:input path="numeroMatricula" />
                         </td>
-                        <td class="alignLeft"><form:errors path="telefoneFixo" cssClass="errorMessage" /></td>
+                        <td class="alignLeft"><form:errors path="numeroMatricula" cssClass="errorMessage" /></td>
                     </tr>
                     <tr>
                         <td class="alignRight">
-                            <form:label path="telefoneCelular" cssClass="labelsBold">Telefone celular:</form:label>
+                            <form:label path="anoIngresso" cssClass="labelsBold">Ano de Ingresso:</form:label>
                         </td>
                         <td class="alignLeft">
-                            <form:input path="telefoneCelular" />
+                            <form:input path="anoIngresso" />
                         </td>
-                        <td class="alignLeft"><form:errors path="telefoneCelular" cssClass="errorMessage" /></td>
+                        <td class="alignLeft"><form:errors path="anoIngresso" cssClass="errorMessage" /></td>
                     </tr>
-                    <tr>
-                        <td class="alignRight">
-                            <form:label path="sexo" cssClass="labelsBold">Sexo:</form:label>
-                        </td>
-                        <td class="alignLeft">
-                            <form:radiobutton path="sexo" value="feminino" label="Feminino" /><br>
-                            <form:radiobutton path="sexo" value="masculino" label="Masculino" />
-                        </td>
-                        <td class="alignLeft"><form:errors path="sexo" cssClass="errorMessage" /></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight">
-                            <form:label path="usuario" cssClass="labelsBold">Usuário:</form:label>
-                        </td>
-                        <td class="alignLeft">
-                            <form:input path="usuario"/>
-                        </td>
-                        <td class="alignLeft"><form:errors path="usuario" cssClass="errorMessage" /></td>
-                    </tr>
-                    <tr>
-                        <td class="alignRight">
-                            <form:label path="senha" cssClass="labelsBold">Senha:</form:label>
-                        </td>
-                        <td class="alignLeft">
-                            <form:password path="senha" showPassword="true"/>
-                        </td>
-                        <td class="alignLeft"><form:errors path="senha" cssClass="errorMessage" /></td>
-                    </tr>
-                    <%-- tr>
-                        <td class="alignRight">
-                            <form:label path="dataNascimento" cssClass="labelsBold">Data de nascimento:</form:label>
-                        </td>
-                        <td class="alignLeft">
-                            <form:input path="dataNascimento" />
-                        </td>
-                        <td class="alignLeft"><form:errors path="dataNascimento" cssClass="errorMessage" /></td>
-                    </tr --%>
                     <tr>
                         <td class="alignRight">
                             <form:label path="cpf" cssClass="labelsBold">CPF:</form:label>
                         </td>
                         <td class="alignLeft">
-                            <form:input path="cpf" readonly="true" />
+                            <form:input path="cpf" />
                         </td>
                         <td class="alignLeft"><form:errors path="cpf" cssClass="errorMessage" /></td>
-                    </tr>
-                     <tr>
-                        <td class="alignRight">
-                            <form:label path="administrador" cssClass="labelsBold">Administrador:</form:label>
-                        </td>
-                        <td class="alignLeft">
-                                <form:radiobutton path="administrador" value="false" label="Não" /><br>
-                                <form:radiobutton path="administrador" value="true" label="Sim" />
-                        </td>
-                        <td class="alignLeft"><form:errors path="administrador" cssClass="errorMessage" /></td>
                     </tr>
                     <tr><td>&nbsp;</td><td></td><td></td></tr>
                     <tr>
