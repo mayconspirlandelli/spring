@@ -29,6 +29,7 @@ public class ClienteBean {
     private boolean sexoB;    
     private DataModel model;
     private Endereco endereco; 
+    private boolean administrador;
 
     @Autowired
     private ClienteDAO clienteDAO;
@@ -76,8 +77,9 @@ public class ClienteBean {
         cliente.setTelefoneCelular(cliente.getTelefoneCelular().trim());
         cliente.setTelefoneFixo(cliente.getTelefoneFixo().trim());
         cliente.setUsuario(cliente.getUsuario().trim());
+        cliente.setAdministrador(cliente.getAdministrador());
         this.cliente = cliente;
-    }
+    }       
 
     /**
      * @return the logado
@@ -106,6 +108,15 @@ public class ClienteBean {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
+   
+    public boolean getAdministrador() {
+        return administrador;
+    }
+
+    public void setAdministrador(boolean administrador) {
+        this.administrador = administrador;
+    }
+    
     
     //METODOS PARA MANIPULACAO DE DADOS DO CLIENTE
     /**

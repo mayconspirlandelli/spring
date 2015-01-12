@@ -198,7 +198,7 @@ public class Cliente extends BaseModel {
         this.cpf = cpf;
     }
 
-    public boolean isAdministrador() {
+    public boolean getAdministrador() {
         return administrador;
     }
 
