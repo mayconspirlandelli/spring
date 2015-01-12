@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    Document   : mostrarCarrinho
+    Created on : 
+    Author     : Maycon
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="template.xhtml">
+
+        <ui:define name="body">
+            <h:form id="form"> <!--prependId="false">-->
+                <div align="left">
+                    <p:panel id="panel11" style="border-radius:10px; box-shadow: rgba(0,0,0,0.4) 10px 10px; 
+                             border: 1px solid blueviolet; width: 795px" >
+                        <p:dataTable resizableColumns="true" id="dataTable" var="carr" value="#{carrinhoBean.listaProdutoEscolhido}"
+                                     paginator="true" rows="7" style="width: 775px;"
+                                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} 
+                                     {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="4,7,14" >
+
+                            <f:facet name="header" class="rowRoxo">
+                                <h:outputText value="#{msgs['carrinho.produtos']}" style="font-size: 16px;
+                                              color: black" />
+                            </f:facet>
+
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{msgs['produtos.nome']}" styleClass="labelsBold" />
+                                </f:facet>
+                                <h:outputText value="#{carr.produto.nome}" styleClass="labels" />
+                            </p:column>
+
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{msgs['produtos.preco']}" styleClass="labelsBold" />
+                                </f:facet>
+                                <h:outputText value="#{carr.produto.preco}" styleClass="labels" />
+                            </p:column>
+
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{msgs['carrinho.quantidade']}" styleClass="labelsBold" />
+                                </f:facet>
+                                <h:outputText value="#{carr.quantidade}" styleClass="labels" />
+                            </p:column>
+
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{msgs['carrinho.subTotal']}" styleClass="labelsBold" />
+                                </f:facet>
+                                <h:outputText value="#{carr.subTotal}" styleClass="labels" />
+                            </p:column>
+
+                            <f:facet name="footer" class="rowRoxo">
+                                <h:outputText value="#{msgs['carrinho.valorTotal']}" style="font-size: 16px;
+                                              color: black" /> 
+                                <h:outputText style="margin-left: 50px;" value="#{carrinhoBean.valorTotal}" styleClass="labels" />
+                            </f:facet>
+
+                        </p:dataTable> 
+
+                    </p:panel>
+
+                    <br/>
+                </div>
+            </h:form>
+            <h:messages />
+        </ui:define>
+    </ui:composition>
+</html>
