@@ -8,10 +8,11 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <ui:composition template="template.xhtml">
-        
+
         <ui:define name="body">
             <h:form id="form"> <!--prependId="false">-->
                 <div align="left">
@@ -23,17 +24,18 @@
                                      {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="4,7,14" >
 
                             <f:facet name="header" class="rowRoxo">
-                                    <h:outputText value="#{msgs['produtos.produtosDisponiveis']}" style="font-size: 16px;
-                                                  color: black" />
+                                <h:outputText value="#{msgs['produtos.produtosDisponiveis']}" style="font-size: 16px;
+                                              color: black" />
                             </f:facet>
 
                             <p:column>
                                 <f:facet name="header">
                                     <h:outputText value="#{msgs['produtos.codigoAtualizar']}" styleClass="labelsBold" />
                                 </f:facet>
-                                <h:commandLink action="#{produtoBean.editarProduto}" value="#{prod.codigo}" styleClass="hiperlink" >
-                                    <f:setPropertyActionListener value="#{prod}" target="#{produtoBean.produto}" /> 
-                                </h:commandLink>
+                                <h:commandLink action="#{produtoBean.editarProduto}" value="#{prod.codigo}" styleClass="hiperlink" rendered="${clienteBean.cliente.administrador}" >
+                                        <f:setPropertyActionListener value="#{prod}" target="#{produtoBean.produto}"  /> 
+                                    </h:commandLink>
+                                <h:outputText value="#{prod.codigo}" styleClass="labels" rendered="${!clienteBean.cliente.administrador}"  />
                             </p:column>
 
                             <p:column>
@@ -57,15 +59,14 @@
                                 <h:outputText value="#{prod.preco}" styleClass="labels" />
                             </p:column>
 
-                            <p:column>
+                            <p:column rendered="${clienteBean.cliente.administrador}">
                                 <f:facet name="header">
                                     <h:outputText value="#{msgs['produtos.excluirProduto']}" styleClass="labelsBold" />
                                 </f:facet>
-
-                                <p:commandLink value="#{msgs['system.excluir']}"
+                                <p:commandLink value="#{msgs['system.excluir']}" 
                                                styleClass="hiperlink" onclick="confirmation.show()">
                                     <f:setPropertyActionListener value="#{prod}" target="#{produtoBean.produto}" />
-                                </p:commandLink>
+                                </p:commandLink>                                                                
                                 <p:confirmDialog id="confirmDialog" message="#{msgs['produtos.confirmaExclusao']}"  
                                                  header="#{msgs['produtos.excluirProdutoPergunta']} " severity="alert" 
                                                  widgetVar="confirmation">
@@ -80,19 +81,19 @@
                                 <f:facet name="header">
                                     <h:panelGrid columns="2" id="gridChart">
                                         <h:graphicImage id="imageChart1" height="35" value="../images/chart.png" 
-                                                        rendered="#{carrinhoBean.vazio}"/>
+                                                        rendered="#{!clienteBean.cliente.administrador and carrinhoBean.vazio}"/>
                                         <h:commandLink action="mostrarCarrinho" styleClass="hiperlink" 
-                                                       rendered="#{!carrinhoBean.vazio}"> 
+                                                       rendered="#{!clienteBean.cliente.administrador and !carrinhoBean.vazio}"> 
                                             <h:graphicImage id="imageChart2" height="35" value="../images/chartfull.png" />
                                         </h:commandLink>
                                     </h:panelGrid>                                
                                 </f:facet>
-                                <p:commandLink action="#{carrinhoBean.addProduto}" 
+                                <p:commandLink action="#{carrinhoBean.addProduto}" disabled="#{clienteBean.cliente.administrador}"
                                                value="+ " styleClass="hiperlink" ajax="false">
                                     <f:setPropertyActionListener value="#{prod}" target="#{carrinhoBean.produto}" /> 
                                 </p:commandLink>
-                                <h:outputLabel value="(#{carrinhoBean.getItens(prod)})" id="qtd" styleClass="hiperlink" />
-                                <p:commandLink action="#{carrinhoBean.remProduto}" 
+                                <h:outputLabel value="(#{carrinhoBean.getItens(prod)})" id="qtd" styleClass="hiperlink"  />
+                                <p:commandLink action="#{carrinhoBean.remProduto}"  disabled="#{clienteBean.cliente.administrador}" 
                                                value=" -" styleClass="hiperlink" ajax="false" >
                                     <f:setPropertyActionListener value="#{prod}" target="#{carrinhoBean.produto}" /> 
                                 </p:commandLink>

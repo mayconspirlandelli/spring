@@ -47,10 +47,4 @@ public class ProdutoEscolhidoBean {
         this.subTotal = this.quantidade * this.produto.getPreco();
         return this.subTotal;
     }   
-//    public float calculaTotalPorProduto() {        
-//        float total = this.quantidade * this.produto.getPreco();
-//        this.subTotal = total;
-//        return total;
-//    }   
-   
 }

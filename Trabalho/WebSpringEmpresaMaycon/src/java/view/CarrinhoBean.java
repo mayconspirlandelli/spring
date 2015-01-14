@@ -144,13 +144,5 @@ public class CarrinhoBean {
 
     public String exibirCarrinho() {
         return "mostrarCarrinho";
-    }
-
-    /*
-    
-     <h:commandLink action="carrinho" styleClass="hiperlink" 
-     rendered="#{!carrinhoBean.vazio}"> 
-     <h:graphicImage id="imageChart2" height="35" value="../images/chartfull.png" />
-     </h:commandLink>
-     */
+    }  
 }
