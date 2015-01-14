@@ -77,7 +77,7 @@ public class ClienteBean {
         cliente.setTelefoneCelular(cliente.getTelefoneCelular().trim());
         cliente.setTelefoneFixo(cliente.getTelefoneFixo().trim());
         cliente.setUsuario(cliente.getUsuario().trim());
-        cliente.setAdministrador(cliente.getAdministrador());
+        //cliente.setAdministrador(cliente.getAdministrador());
         this.cliente = cliente;
     }       
 

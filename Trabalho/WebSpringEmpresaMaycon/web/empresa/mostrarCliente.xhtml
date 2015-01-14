@@ -58,7 +58,11 @@
 
                             <h:outputText value="#{msgs['login.usuario']}: " styleClass="labelsBold" />
                             <h:outputText value="#{clienteBean.cliente.usuario}" styleClass="labels"/>
-
+                            
+                            
+                            <h:outputText value="#{msgs['cliente.administrador']}: " styleClass="labelsBold" />
+                            <h:outputText value="#{clienteBean.cliente.administrador}" styleClass="labels"/>
+                            
                             <h:outputText value="#{msgs['cliente.exclusaoCadastro']}: " styleClass="labelsBold" />
                             <h:panelGrid columns="2" >
                                 <p:commandLink value="#{msgs['cliente.cliqueExcluir']}"

@@ -96,7 +96,7 @@
                             
                             
                             <h:outputText value="#{msgs['cliente.administrador']}: " styleClass="labels" />
-                            <p:selectOneRadio id="administrador" value="#{clienteBean.administrador}" styleClass="radioItem" 
+                            <p:selectOneRadio id="administrador" value="#{clienteBean.cliente.administrador}" styleClass="radioItem" 
                                               required="true"
                                               requiredMessage="#{msgs['cliente.administradorRequired']}">
                                 <f:selectItem itemLabel="#{msgs['cliente.administradorSim']}  " itemValue="true" />

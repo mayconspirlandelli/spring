@@ -90,6 +90,16 @@
                                 <f:validateLength minimum="5" maximum="25" for="senha"></f:validateLength>
                             </p:password>
                             <p:message for="senha" display="icon"/>  
+                            
+                            
+                            <h:outputText value="#{msgs['cliente.administrador']}: " styleClass="labels" />
+                            <p:selectOneRadio id="administrador" value="#{clienteBean.cliente.administrador}" styleClass="radioItem" 
+                                              required="true"
+                                              requiredMessage="#{msgs['cliente.administradorRequired']}">
+                                <f:selectItem itemLabel="#{msgs['cliente.administradorSim']}  " itemValue="true" />
+                                <f:selectItem itemLabel="#{msgs['cliente.administradorNao']}  " itemValue="false" />
+                            </p:selectOneRadio>
+                            <p:message for="administrador" display="icon"/>  
 
                         </h:panelGrid>
                         
