@@ -195,7 +195,7 @@ public class ClienteBean {
      */
     public String novoCliente() {
         Cliente c = new Cliente("", "", "", "", "", "",  null, 0, new ArrayList<Endereco>(), false);
-        setCliente(c);
+        setCliente(c);        
         setLogado(false);
         return "cadastrarCliente";
     }
@@ -239,7 +239,8 @@ public class ClienteBean {
      */
     public String excluirEndereco() {
         getEnderecoManipulacao();
-//        enderecoDAO.excluir(this.endereco);
+//        enderecoDAO.excluir(this.endereco); TODO
+        enderecoDAO.excluir(this.endereco);
         this.cliente.getEnderecos().remove(this.endereco);
         this.endereco = null;
         atualizarCliente();

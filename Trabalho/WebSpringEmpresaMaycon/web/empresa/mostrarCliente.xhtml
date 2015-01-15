@@ -57,8 +57,7 @@
                             </h:outputText>
 
                             <h:outputText value="#{msgs['login.usuario']}: " styleClass="labelsBold" />
-                            <h:outputText value="#{clienteBean.cliente.usuario}" styleClass="labels"/>
-                            
+                            <h:outputText value="#{clienteBean.cliente.usuario}" styleClass="labels"/>                            
                             
                             <h:outputText value="#{msgs['cliente.administrador']}: " styleClass="labelsBold" />
                             <h:outputText value="#{clienteBean.cliente.administrador}" styleClass="labels"/>
@@ -78,9 +77,14 @@
                                     <p:commandButton id="negativa" value="#{msgs['system.nao']}" onclick="confirmation.hide()" 
                                                      type="button" />   
                                 </p:confirmDialog>
-                                
-                                
                             </h:panelGrid>
+                            
+                            <h:outputText value="#{msgs['cliente.novoEndereco']}: " styleClass="labelsBold" />
+                            <h:panelGrid columns="2" >
+                                <h:commandLink action="#{clienteBean.novoEndereco}" value="#{msgs['cliente.cliqueCadastrar']}" styleClass="hiperlink"/>
+                                <h:graphicImage id="imageEndereco" height="30" value="../images/ic_pin_drop_black_36dp.png" />
+                            </h:panelGrid>
+                            
                         </h:panelGrid>
                     </p:panel>
                     
@@ -128,10 +132,17 @@
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
+                                    <h:outputText value="#{msgs['endereco.cep']}" styleClass="titulosPretos" />
+                                </f:facet>
+                                <h:outputText value="#{item.cep}" styleClass="labels" />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
                                     <h:outputText value="#{msgs['endereco.excluirEndereco']}" styleClass="titulosPretos" />
                                 </f:facet>
                                 <h:commandLink action="#{clienteBean.excluirEndereco}" value="#{msgs['system.excluir']}" styleClass="hiperlink"/>
                             </h:column>
+                            
                         </h:dataTable>
                         
                     </p:panel>
