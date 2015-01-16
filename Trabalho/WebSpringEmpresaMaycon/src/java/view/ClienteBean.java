@@ -8,6 +8,7 @@ package view;
 import dao.ClienteDAO;
 import dao.EnderecoDAO;
 import java.util.ArrayList;
+import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.model.DataModel;
@@ -239,13 +240,14 @@ public class ClienteBean {
      */
     public String excluirEndereco() {
         getEnderecoManipulacao();
-//        enderecoDAO.excluir(this.endereco); TODO
         enderecoDAO.excluir(this.endereco);
         this.cliente.getEnderecos().remove(this.endereco);
         this.endereco = null;
         atualizarCliente();
         return "mostrarCliente";
     }
+    
+
 
     /**
      * Metodo chamado para buscar objeto Endereco do DataModel.
@@ -254,7 +256,7 @@ public class ClienteBean {
      * lista de enderecos, gracas a posicao index: lista.set(index, objeto).
      */
     public void getEnderecoManipulacao() {
-        setEndereco((Endereco) model.getRowData());
+        setEndereco((Endereco) model.getRowData());        
     }
 
     /**
@@ -273,9 +275,9 @@ public class ClienteBean {
      */
     public String salvarEndereco() {
         this.endereco.setClienteId(cliente.getObjectID());
-        this.cliente.getEnderecos().add(this.endereco);
+        this.cliente.getEnderecos().add(this.endereco);        
+        enderecoDAO.salvar(this.endereco);
         atualizarCliente();
         return "mostrarCliente";
-    }
-    
+    }    
 }
