@@ -8,7 +8,6 @@ package view;
 import dao.ClienteDAO;
 import dao.EnderecoDAO;
 import java.util.ArrayList;
-import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.model.DataModel;
@@ -77,8 +76,7 @@ public class ClienteBean {
         cliente.setSenha(cliente.getSenha().trim());
         cliente.setTelefoneCelular(cliente.getTelefoneCelular().trim());
         cliente.setTelefoneFixo(cliente.getTelefoneFixo().trim());
-        cliente.setUsuario(cliente.getUsuario().trim());
-        //cliente.setAdministrador(cliente.getAdministrador());
+        cliente.setUsuario(cliente.getUsuario().trim());        
         this.cliente = cliente;
     }       
 
@@ -227,9 +225,8 @@ public class ClienteBean {
      * @return - Retorna pagina/formulario para que usuario possa atualizar os dados do endereco.
      */
     public String editarEndereco() {
-        getEnderecoManipulacao();
-        return "editarEndereco";
-
+        getEnderecoManipulacao();       
+         return "atualizarEndereco";
     }
 
     /**
@@ -247,8 +244,6 @@ public class ClienteBean {
         return "mostrarCliente";
     }
     
-
-
     /**
      * Metodo chamado para buscar objeto Endereco do DataModel.
      * Quando usuario clica no link da tabela para atualizar ou excluir endereco.
@@ -279,5 +274,15 @@ public class ClienteBean {
         enderecoDAO.salvar(this.endereco);
         atualizarCliente();
         return "mostrarCliente";
-    }    
+    }
+    
+     /**
+     * Metodo chamado para salvar as alteracoes feitas nos dados do endereço - atualizacao.
+     * Atualizacao inclui as de endereco
+     * @return - String - retorna pagina do cliente com respectivos dados e enderecos.
+     */
+    public String atualizarEndereco() {
+        enderecoDAO.atualizar(endereco);                
+        return "mostrarCliente";
+    }
 }

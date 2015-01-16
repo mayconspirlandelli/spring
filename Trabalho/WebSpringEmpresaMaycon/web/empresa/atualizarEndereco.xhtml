@@ -21,7 +21,7 @@
 
                         <h:panelGrid columns="2" rowClasses="rowRoxo" styleClass="tabelaRich500">
                             <h:graphicImage id="imageAcesso" height="25" value="../images/novousuario.png" />
-                            <h:outputText value="#{msgs['endereco.dadosNovoEndereco']}" styleClass="titulosTabelas" />
+                            <h:outputText value="#{msgs['endereco.atualizarEndereco']}" styleClass="titulosTabelas" />
                         </h:panelGrid>
 
                         <br/>
@@ -76,13 +76,13 @@
                                          requiredMessage="#{msgs['cliente.nomeRequired']}">
                                 <f:validateLength minimum="8" maximum="8" for="cep"/>
                             </p:inputText>
-                            <p:message for="cep" display="icon"/>                            
+                            <p:message for="cep" display="icon"/>
                             
                         </h:panelGrid>
                         
                         <br/>
 
-                        <p:commandButton value="#{msgs['system.salvar']}" action="#{clienteBean.salvarEndereco}" 
+                        <p:commandButton value="#{msgs['system.salvar']}" action="#{clienteBean.atualizarEndereco}" 
                                          update="panel1" ajax="false"/>
 
                     </p:panel>
